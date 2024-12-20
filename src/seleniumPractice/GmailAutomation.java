@@ -104,9 +104,15 @@ public class GmailAutomation {
 
 	// Relative xpath
 	
-		//tagName[@attribute = value]   --- attribute can be id / name / class / jsname / jdname /
+	//tagName[@attribute = value]   --- attribute can be id / name / class / jsname / jdname /
+	//*[@attribute = value]	
+	//tagName[@attribute1 = value  and @attribute2= value]	
+    //tagName[text() = value ]    --------------  select * from Employee where empID=1234 and Dept=RD
+	//tagName[text() = value and @attribute=value ]
+	//tagName[contains(text() , value) ]
+	//tagName[contains(@attribute , value)]
 	
-	    //tagName[text() = value ]    --------------  select * from Employee where empID=1234 and Dept=RD
+	//tagName[@attribute1 = value  or  @attribute2= value]
 
 	@Test
 	public void forgotEmail_Absolutexpath()
@@ -124,6 +130,10 @@ public class GmailAutomation {
 		System.out.println("Test Case : Forgot Email with Relative xpath");
 		//driver.findElement(By.xpath("//button[@jsname='Cuz2Ue']")).click();
 		driver.findElement(By.xpath("//button[text()='Forgot email?']")).click();
+		//*[text()='Forgot email?']
+		//button[contains(text(),'Forgot ')]
+		//input[@class='whsOnd zHQkBf' and @name='identifier']
+		//input[@name='identifier'  or  @id='identifierId']
 	}
 
 	@Test
